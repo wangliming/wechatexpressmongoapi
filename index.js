@@ -9,7 +9,7 @@ import app from './config/express';
 import request from 'supertest-as-promised';
 import httpStatus from 'http-status';
 
-const debug = require('debug')('express-mongoose-es6-rest-api:index');
+const debug = require('debug')('wechatexpressmongoapi:index');
 
 // make bluebird default Promise
 Promise = require('bluebird'); // eslint-disable-line no-global-assign

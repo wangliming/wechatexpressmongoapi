@@ -34,7 +34,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 // config should be imported before importing any other file
-var debug = require('debug')('express-mongoose-es6-rest-api:index');
+var debug = require('debug')('wechatexpressmongoapi:index');
 
 // make bluebird default Promise
 Promise = require('bluebird'); // eslint-disable-line no-global-assign

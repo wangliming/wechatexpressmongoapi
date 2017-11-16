@@ -1,6 +1,6 @@
 {
   "name": "wechatexpressmongoapi",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "A Boilerplate application for building REST APIs using express, mongoose in ES6 with code coverage",
   "author": "wangliming <wangliming05231105@126.com>",
   "main": "index.js",
@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "gulp serve",
-    "start:debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn start",
+    "start:debug": "cross-env DEBUG=wechatexpressmongoapi:* yarn start",
     "build": "gulp",
     "lint": "esw *.js server config --color",
     "lint:watch": "yarn lint -- --watch",
