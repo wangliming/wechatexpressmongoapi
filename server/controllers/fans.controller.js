@@ -1,13 +1,24 @@
 import Fans from '../models/fans.model';
 function uploadfans(req, res, next){
   console.log(req.body)
+  
   const data = req.body;
-  // Fans.insertMany(data, function(error, docs){
-  //   console.log(error)
-  //   console.log(docs)
-  // })
-  for(let i=0;i<data.length;i++){
-    const fdata = data[i];
+  const curuser = data.curuser;
+  const fanslist = data.fanslist
+  if(!curuser){
+    return
+  }
+  // 插入当前主用户
+  findandupdate(curuser, function(error, docs){
+    console.log(error)
+    console.log(docs)
+  })
+  if(!fanslist){
+    return
+  }
+  // 插入主用户的粉丝
+  for(let i=0;i<fanslist.length;i++){
+    const fdata = fanslist[i];
     findandupdate(fdata);
   }
   res.json({status:'success'})
@@ -44,7 +55,10 @@ function create(fanobj) {
     strange: fanobj.strange,
     weixin: fanobj.weixin,
     uin: fanobj.uin,
-    customerid: fanobj.customerid
+    customerid: fanobj.customerid,
+    mid: fansobj.mid,
+    pid: fanobj.pid,
+    fip: fansobj.fip
   });
 
   fans.save();

@@ -60,7 +60,13 @@ const FansSchema = new mongoose.Schema({
   uin: {
     type: Number
   },
-  customerid: {
+  pid: { // 是否是父粉丝
+    type: String
+  },
+  mid: { // 此粉丝所在机器的id
+    type: String
+  },
+  fip: { // 粉丝所在机器的ip，请求使用
     type: String
   }
 });
